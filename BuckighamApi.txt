@@ -1,0 +1,69 @@
+ @GET("login")
+    Call<ResponseBody> login(@QueryMap HashMap<String, String> map);
+
+    //https://techimmense.in/BuckinghamHouse/webservice/get_announcement_list
+    @GET("get_announcement_list?")
+    Call<ResponseBody> getAnnouncement(@Query("user_id") String user_id);
+
+ //https://techimmense.in/BuckinghamHouse/webservice/get_user_manuals?type=VIDEO
+    @GET("get_user_manuals?")
+    Call<ResponseBody> getManual(@Query("user_id") String user_id,@Query("type") String type);
+
+
+    //https://techimmense.in/BuckinghamHouse/webservice/get_docuements
+    @GET("get_docuements?")
+    Call<ResponseBody> getDocuments(@Query("user_id") String user_id);
+
+
+
+    @GET("signup")
+    Call<ResponseBody> signup(@QueryMap HashMap<String, String> map);
+
+    @GET("get_category?")
+    Call<ResponseBody> getCategory(@Query("user_id") String userID);
+
+    @Multipart
+    @POST("update_profile")
+    Call<ResponseBody> updateProfile(@QueryMap HashMap<String,String>map, @Part MultipartBody.Part filePart);
+
+    @GET("change_password?")
+    Call<ProfileResponse> changepassword(@Query("user_id") String user_id,@Query("password") String password,@Query("old_password") String old_password) ;
+
+    @GET("forgot_password?")
+    Call<ResponseBody> ForgotCall(@Query("email") String email);
+
+    @GET("get_my_feed_post?")
+    Call<ResponseBody> getMyFeed(@Query("user_id") String userID);
+
+   @GET("get_profile?")
+    Call<ResponseBody> getProfile(@Query("user_id") String userID);
+
+    @GET("get_all_feed_post?")
+    Call<ResponseBody> getAllFeed(@Query("user_id") String userID);
+
+    @GET("common_room_booking?")
+    Call<ResponseBody> doCommonRoomBooking(@Query("user_id") String userID,@Query("time_slot") String time_slot,@Query("booking_date") String booking_date);
+
+
+
+    @GET("cleaner_request?")
+    Call<ResponseBody> doCleaningBooking(@Query("user_id") String userID,@Query("amount") String amount,@Query("time_slot") String time_slot,@Query("booking_date") String booking_date);
+
+
+   @GET("get_notification_list?")
+    Call<ResponseBody> getMyNotifications(@Query("user_id") String user_id);
+
+
+
+       @GET("like_unlike_feed_post?")
+    Call<ResponseBody> LikeUnlikeFeed(@Query("user_id") String userID,@Query("feed_post_id") String feed_post_id);
+
+
+    @GET("delete_feed_post?")
+    Call<ResponseBody> deleteFeed(@Query("feed_post_id") String feed_post_id);
+
+
+
+    @GET("delete_user_account?")
+    Call<ResponseBody> deleteUserAccount(@Query("user_id") String user_id);
+
