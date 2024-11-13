@@ -7,7 +7,7 @@
 
 import UIKit
 
-class AdvertisementDatailVC: UIViewController {
+class AdvertisementDetailVC: UIViewController {
 
     @IBOutlet weak var img: UIImageView!
     @IBOutlet weak var lblCode: UILabel!
